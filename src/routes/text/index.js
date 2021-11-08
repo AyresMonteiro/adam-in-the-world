@@ -11,7 +11,7 @@ for (let i = 0; i < files.length; i++) {
 
   if (banned.find((val) => val === files[i])) continue;
 
-  const [routeClass, synonyms] = require('./' + files[i]);
+  const [routeClass, synonyms] = require(__dirname + '/' + files[i]);
 
   for (let j = 0; j < synonyms.length; j++) {
     exported[synonyms[j]] = routeClass;
