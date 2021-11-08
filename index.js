@@ -1,6 +1,8 @@
-const { parsed: {
+require('dotenv').config();
+
+const {
   DISCORD_BOT_TOKEN
-} } = require('dotenv').config();
+} = process.env;
 
 const Discord = require('discord.js');
 const { Intents: { FLAGS: {
