@@ -1,3 +1,4 @@
 module.exports = {
-  'hello': "Hello, I'm Adam."
+  'hello': "Hello, I'm Adam.",
+  'barbara': 'Barbara is ',
 };
