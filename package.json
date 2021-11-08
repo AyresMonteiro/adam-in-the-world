@@ -1,0 +1,13 @@
+{
+  "name": "adam-in-the-world",
+  "version": "1.0.0",
+  "description": "Discord's bot: Adam In The World.",
+  "main": "index.js",
+  "author": "@AyresMonteiro",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "discord.js": "^13.3.1",
+    "dotenv": "^10.0.0"
+  }
+}
