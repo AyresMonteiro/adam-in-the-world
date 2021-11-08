@@ -1,9 +1,3 @@
-require('dotenv').config();
-
-const {
-  DISCORD_BOT_TOKEN
-} = process.env;
-
 const Discord = require('discord.js');
 const { Intents: { FLAGS: {
   GUILDS,
@@ -11,10 +5,17 @@ const { Intents: { FLAGS: {
   GUILD_PRESENCES,
   DIRECT_MESSAGES,
   DIRECT_MESSAGE_TYPING,
-  DIRECT_MESSAGE_REACTIONS
+  DIRECT_MESSAGE_REACTIONS,
 } } } = Discord;
+
 const MessageParser = require('./src/MessageParser');
 const Router = require('./src/Router');
+
+require('dotenv').config();
+
+const {
+  DISCORD_BOT_TOKEN
+} = process.env;
 
 const bot = new Discord.Client({
   intents: [
@@ -31,5 +32,5 @@ bot.login(DISCORD_BOT_TOKEN);
 
 bot.on('messageCreate', message => {
   const parsedContent = MessageParser.parse(message);
-  Router.route(parsedContent[0], parsedContent);
+  Router.route(message, parsedContent[0], parsedContent);
 });
